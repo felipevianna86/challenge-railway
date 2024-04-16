@@ -1,43 +1,35 @@
 # Java AI Powered
 
-# Projeto do Bootcamp DIO Java AI Powered
+# Projeto do Bootcamp DIO Java AI Powered - Challenge Railway
 
 ## Diagrama de classes
 
 ```mermaid
   classDiagram
     class Usuario{
-      -String name
-      -Conta conta
-      -Funcionalidade[] funcionalidades
-      -Cartao cartao
-      -Noticia[] noticias
+      -String usuario
+      -Pessoa pessoa
+      -String email
     }
 
-    class Conta{
-      -String numero
-      -String agencia
-      -Number saldo
-      -Number limite
+    class Pessoa{
+      -String cpf
+      -String nome
+      -Date dataNascimento
     }
 
-    class Funcionalidade{
-      -String icone
-      -String descricao
+    class Curso{
+      -String nome
+      -String sigla
     }
 
-    class Noticia{
-      -String icone
-      -String descricao
+    class Matricula{
+      -String matricula
+      -Curso curso
+      -Usuario usuario
     }
 
-    class Cartao{
-      -String numero
-      -Number limite
-    }
-
-    Usuario "1" *-- "1" Conta
-    Usuario "1" *-- "N" Funcionalidade
-    Usuario "1" *-- "1" Cartao
-    Usuario "1" *-- "N" Noticia
+    Usuario "1" *-- "1" Pessoa
+    Matricula "1" *-- "1" Curso
+    Matricula "1" *-- "1" Usuario
 ```
